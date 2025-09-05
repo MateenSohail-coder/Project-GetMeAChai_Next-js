@@ -5,12 +5,13 @@ export default async function username({ params }) {
   const { username } = await params;
   const decoded = decodeURIComponent(username);
   const displayName = decoded.split("@")[0];
-  return (
+ if (username.includes(".com")){
+return (
     <div>
       <div className="pics w-full">
-        <div className="coverprofilepic h-[50vh]  bg-[url('/coverpic.png')] flex jusstify-center items-end"></div>
+        <div className="coverprofilepic h-[50vh] bg-cover  bg-[url('/coverpic.png')] flex jusstify-center items-end"></div>
         <div className="-translate-y-23 flex flex-col items-center text-white gap-2 px-2.5 text-center">
-          <img src="profilepic.png" alt="" className="h-35 w-35 rounded-2xl " />
+          <img src="profilepic.png" alt="" className="h-35 bg-cover w-35 rounded-2xl " />
           <div className="name font-bold text-xl">@{displayName}</div>
           <div className="message text-1xl">
             Let&apos;s Help @{displayName} to get a cup of tea
@@ -41,6 +42,26 @@ export default async function username({ params }) {
                   />
                 </div>
                    <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ahmad donate ₹20 with a message "I am very glad to support my fan"`}
+                  />
+                </div>
+                    <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ahmad donate ₹20 with a message "I am very glad to support my fan"`}
+                  />
+                </div>
+                    <div className="flex items-center gap-2">
                   <img
                     src="/man.gif"
                     className="w-8 h-8 rounded-full bg-white"
@@ -141,4 +162,9 @@ export default async function username({ params }) {
       </div>
     </div>
   );
+   }
+   else{
+   return <div className="text-center py-5 px-4 text-5xl font-bold text-neutral-500 flex items-center justify-center gap-3"><p className="text-white">{username}</p> are not Found</div>;
+   }
 }
+
