@@ -80,7 +80,7 @@ export default function Home() {
         <div className="bg-white opacity-15 h-1 w-full"></div>
         <div
           id="aboutus"
-          className="md:h-[65vh] h-[100vh] flex flex-col justify-around text-white px-10 py-2"
+          className="md:h-[70vh] h-[110vh] flex flex-col justify-around text-white px-12 py-7"
         >
           <div className="text-center font-bold text-2xl ">
             Learn More About Us

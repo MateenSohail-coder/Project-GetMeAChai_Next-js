@@ -1,14 +1,14 @@
 import React from "react";
+import MessageCard from "@/app/components/Message";
 
 export default async function username({ params }) {
   const { username } = await params;
   const decoded = decodeURIComponent(username);
-
   const displayName = decoded.split("@")[0];
   return (
     <div>
       <div className="pics w-full">
-        <div className="coverprofilepic h-[50vh]  bg-[url('/coverpic.png')] flex justify-center items-end"></div>
+        <div className="coverprofilepic h-[50vh]  bg-[url('/coverpic.png')] flex jusstify-center items-end"></div>
         <div className="-translate-y-23 flex flex-col items-center text-white gap-2 px-2.5 text-center">
           <img src="profilepic.png" alt="" className="h-35 w-35 rounded-2xl " />
           <div className="name font-bold text-xl">@{displayName}</div>
@@ -22,11 +22,64 @@ export default async function username({ params }) {
         </div>
         <div className="pb-15">
           <div className="portions max-h-auto h-[110vh] md:h-[65vh] w-full flex-col md:flex-row flex justify-between px-4">
-            <div className="portion1 md:h-full md:w-[49%] max-h-auto w-full px-9 py-4 h-[49%] text-white bg-[#0d1425] rounded-xl">
-              <div className="heading font-bold text-2xl">Supporters</div>
-              <div className="list">
-                <div className="text-center my-2.5 font-semibold text-xl">
+            <div className="portion1 md:h-full md:w-[49%] max-h-auto w-full px-2 md:px-9 py-4 h-[49%] text-white bg-[#0d1425] rounded-xl overflow-y-scroll relative ">
+              <div className="heading font-bold text-2xl sticky top-0 backdrop-blur-xl bg-white/1  rounded-3xl border border-white/20 shadow-2xl py-5 px-5  ">
+                Supporters
+              </div>
+              <div className="list flex flex-col gap-4 mt-5">
+                {/* <div className="text-center my-2.5 font-semibold text-xl">
                   No supporters yet ☹
+                </div> */}
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ahmad donate ₹20 with a message "I am very glad to support my fan"`}
+                  />
+                </div>
+                   <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ahmad donate ₹20 with a message "I am very glad to support my fan"`}
+                  />
+                </div>
+                   <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ahmad donate ₹20 with a message "I am very glad to support my fan"`}
+                  />
+                </div>
+                
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ali donate ₹50 with a message "I support my fan ❣ "Ali donate ₹50 with a message "I support my fan ❣ "Ali donate ₹50 with a message "I support my fan ❣ "Ali donate ₹50 with a message "I support my fan ❣ "Ali donate ₹50 with a message "I support my fan ❣ "`}
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/man.gif"
+                    className="w-8 h-8 rounded-full bg-white"
+                    alt=""
+                  />
+                  <MessageCard
+                    message={`Ahmad donate ₹20 with a message "I am very glad to support my fan"`}
+                  />
                 </div>
               </div>
             </div>

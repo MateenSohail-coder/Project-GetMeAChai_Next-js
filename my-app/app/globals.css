@@ -1,1 +1,33 @@
 @import "tailwindcss";
+/* Firefox */
+html {
+  scrollbar-width: thin;                 /* auto | thin | none */
+  scrollbar-color: #9ca3af #f3f4f6;      /* thumb track */
+}
+
+/* Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 10px;        /* vertical */
+  height: 10px;       /* horizontal */
+}
+*::-webkit-scrollbar-track {
+  background: #f3f4f6;           /* track color */
+}
+*::-webkit-scrollbar-thumb {
+  background: #9ca3af;           /* thumb color */
+  border-radius: 9999px;         /* fully rounded */
+  border: 2px solid #f3f4f6;     /* space around thumb */
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Optional dark mode */
+@media (prefers-color-scheme: dark) {
+  html { scrollbar-color: #6b7280 #111827; }
+  *::-webkit-scrollbar-track { background: #111827; }
+  *::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-color: #111827;
+  }
+}
